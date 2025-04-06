@@ -1,0 +1,78 @@
+body {
+    text-align: center;
+    color: black;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "Aside1 A Aside2"
+        "footer footer footer";
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 50px 300px 50px;
+    height: 100vh;
+  }
+  
+  .header {
+    grid-area: header;
+    background-color: orangered;
+    padding: 20px;
+  }
+  
+  .Aside1 {
+    padding: 20px;
+    grid-area: Aside1;
+    background-color: lightblue;
+  }
+  
+  .Aside2 {
+    padding: 20px;
+    grid-area: Aside2;
+    background-color: yellow;
+  }
+  
+  .A {
+    padding: 20px;
+    grid-area: A;
+    background-color: lightgreen;
+  }
+  
+  .footer {
+    padding: 20px;
+    grid-area: footer;
+    background-color: lightpink;
+  }
+  
+  /* Media Query cho màn hình có chiều rộng tối đa 1200px (2 cột) */
+  @media (max-width: 1200px) {
+    .container {
+        grid-template-areas: 
+            "header header"
+            "A A"
+            "Aside1 Aside2"
+            "footer footer";
+        grid-template-columns: 1fr 1fr ; /* Sử dụng 2 cột chính */
+    }
+  }
+  
+  /* Media Query cho màn hình có chiều rộng tối đa 600px (1 cột) */
+  @media (max-width: 600px) {
+    .container {
+        grid-template-areas: 
+            "header"
+            "A"
+            "Aside1"
+            "Aside2"
+            "footer";
+        grid-template-columns: 1fr; /* Chuyển thành 1 cột */
+    }
+  
+    body {
+        background-color: cyan;
+    }
+  }
+  
+  
